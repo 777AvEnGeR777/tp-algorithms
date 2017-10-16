@@ -1,4 +1,4 @@
-/* PocketSort */
+п»ї/* PocketSort */
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -6,7 +6,7 @@
 using std::vector;
 using std::cin;
 
-// Карманная сортировка по последней цифре
+// РљР°СЂРјР°РЅРЅР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ РїРѕСЃР»РµРґРЅРµР№ С†РёС„СЂРµ
 void PocketSort(vector<long long>& arr){
 	int n = arr.size();
 	if( n <= 1)
@@ -14,26 +14,26 @@ void PocketSort(vector<long long>& arr){
 	
 	int k = 10;
 
-	// Количество элементов в каждом кармане
+	// РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РєР°Р¶РґРѕРј РєР°СЂРјР°РЅРµ
 	vector<int> pockets(k, 0);
 	for(int i = 0; i < n; i++) {
 		pockets[arr[i] % 10]++;
 	}
-	// Преобразуем в координаты начала карманов.
+	// РџСЂРµРѕР±СЂР°Р·СѓРµРј РІ РєРѕРѕСЂРґРёРЅР°С‚С‹ РЅР°С‡Р°Р»Р° РєР°СЂРјР°РЅРѕРІ.
 	int sum = 0;
 	for(int i = 0; i < k; i++) {
 		int current = pockets[i];
 		pockets[i] = sum;
 		sum += current;
 	}
-	// Перемещаем элементы в результирующий массив
+	// РџРµСЂРµРјРµС‰Р°РµРј СЌР»РµРјРµРЅС‚С‹ РІ СЂРµР·СѓР»СЊС‚РёСЂСѓСЋС‰РёР№ РјР°СЃСЃРёРІ
 	vector<long long> result(n, 0);
 
 	for(int i = 0; i < n; i++) {
 		result[pockets[arr[i] % 10]++] = arr[i];
 	}
 
-	// Меняем местами. Старый удалится в деструкторе result.
+	// РњРµРЅСЏРµРј РјРµСЃС‚Р°РјРё. РЎС‚Р°СЂС‹Р№ СѓРґР°Р»РёС‚СЃСЏ РІ РґРµСЃС‚СЂСѓРєС‚РѕСЂРµ result.
 	std::swap(arr, result);
 }
 

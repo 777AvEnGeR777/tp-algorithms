@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <vector>
 using std::cin;
 using std::vector;
@@ -7,7 +7,7 @@ struct CSegment {
 	int Left;
 	int Right;
 
-	// Сравнение по правому краю. Если равны, то по левому
+	// РЎСЂР°РІРЅРµРЅРёРµ РїРѕ РїСЂР°РІРѕРјСѓ РєСЂР°СЋ. Р•СЃР»Рё СЂР°РІРЅС‹, С‚Рѕ РїРѕ Р»РµРІРѕРјСѓ
 	bool operator<(const CSegment& right) const;
 	bool operator<=(const CSegment& right) const;
 	bool operator>(const CSegment& right) const;

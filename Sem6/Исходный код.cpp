@@ -1,4 +1,4 @@
-#include "Huffman.h"
+п»ї#include "Huffman.h"
 #include <assert.h>
 #include <vector>
 
@@ -11,8 +11,8 @@ public:
 	bool ReadByte(byte& value);
 private:
 	IInputStream& stream;
-	byte lastByte; // Последний байт, считанный из stream
-	char readBitsCount; // Количество считанных бит из lastByte
+	byte lastByte; // РџРѕСЃР»РµРґРЅРёР№ Р±Р°Р№С‚, СЃС‡РёС‚Р°РЅРЅС‹Р№ РёР· stream
+	char readBitsCount; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‡РёС‚Р°РЅРЅС‹С… Р±РёС‚ РёР· lastByte
 };
 
 
